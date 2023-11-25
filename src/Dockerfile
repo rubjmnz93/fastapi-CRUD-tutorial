@@ -14,6 +14,7 @@ RUN set -eux \
     && python -m venv /py \
     && apk add --no-cache --virtual .build-deps build-base \
          openssl-dev libffi-dev gcc musl-dev python3-dev \
+         postgresql-dev bash \
     && /py/bin/pip install --upgrade pip setuptools wheel \
     && /py/bin/pip install -r /tmp/requirements.txt \
     && if [ $DEV = "true" ]; \
